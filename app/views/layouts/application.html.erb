@@ -10,7 +10,20 @@
 <body>
 <%= render 'layouts/navbar' %>
 <br>
-<%= yield %>
+<br>
+<br>
+<div class="row">
+	<div class="col-md-1">
+	</div>	
+	<div class="col-md-7">
+		<%= yield %>
+	</div>
+	<div class="col-md-3">
+		<%= render 'layouts/sidebar' %>
+	</div>
+	<div class="col-md-1">
+	</div>	
+</div>			
 
 </body>
 </html>

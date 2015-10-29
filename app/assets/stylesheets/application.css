@@ -66,3 +66,16 @@
 }
 
 #navBarSearchForm input[type=text]{width:630px !important;}
+
+.number-likes {
+	margin-left: 12px;
+}
+
+.number-dislikes {
+	margin-left: 12px;
+}
+
+.videoTitle {
+	font-size: 30px;
+	color: #2574A9;
+}
