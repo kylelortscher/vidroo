@@ -11,8 +11,9 @@
  * file per style scope.
  *
  *= require bootflat
- *= require_tree .
  *= require_self
+ *= require fancybox
+ *= require_tree .
  */
 #login-dp{
     min-width: 250px;

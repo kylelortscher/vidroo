@@ -10,9 +10,16 @@
         <div class="col-md-3">
           <img src="http://img.youtube.com/vi/IrJkyFeJ2Fc/mqdefault.jpg" height="125px" width="221px">
         </div> 
-          <div class="videoTitle"><%= video.title %></div>
+          <div class="videoTitle"><%= link_to "#{video.title}", "#hello", class: "fancybox" %></div>
           <%= video.url %>
       </div>  
     </div>  
     <hr>
 <% end %>
+<%= link_to "Show mah Fancybox!", "#hello", class: "fancybox" %>
+
+<div style="display:none;">
+  <div id="hello">
+  Hello world!
+  </div>
+</div>
