@@ -19,6 +19,8 @@ gem 'jquery-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 #Devise Authentication Gem
 gem 'devise', '~> 3.5', '>= 3.5.2'
+#Will Paginate
+gem 'will_paginate', '~> 3.0.6'
 #Using Bootfalt Flat UI For Bootstrap
 gem 'bootflat-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
