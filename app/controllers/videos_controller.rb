@@ -14,7 +14,7 @@ class VideosController < ApplicationController
 
   # GET /videos/new
   def new
-    @video = current_user.videos.build
+    @video = Video.new
   end
 
   # GET /videos/1/edit
@@ -24,7 +24,8 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = current_user.videos.build(video_params)
+    @video = Video.new(video_params)
+    @video.user = current_user
 
     respond_to do |format|
       if @video.save
@@ -48,6 +49,18 @@ class VideosController < ApplicationController
         format.html { render :edit }
         format.json { render json: @video.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def like
+    @video = Video.find(params[:id])
+    like = Like.create(like: params[:like], user: current_user, video: @video)
+    if like.valid?
+      flash[:success] = "Your selection was successful"
+      redirect_to :back
+    else
+      flash[:danger] = "You can only like/dislike a recipe once."
+      redirect_to :back
     end
   end
 

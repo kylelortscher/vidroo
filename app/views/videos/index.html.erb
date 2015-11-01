@@ -1,11 +1,15 @@
 <% @videos.each do |video| %>
     <div class="videopost">
       <div class="row">
-        <div class="col-md-1"> 
+        <div class="col-md-1">
+        <%= link_to like_video_path(video, like: true), method: :post do %>
           <button type="button" class="btn btn-primary"><i class="fa fa-thumbs-up"></i></button>
-          <div class="number-likes">54</div>
+          <div class="number-likes"><%= video.thumbs_up_total %></div>
+        <% end %>
+        <%= link_to like_video_path(video, like: false), method: :post do %> 
           <button type="button" class="btn btn-danger"><i class="fa fa-thumbs-down"></i></button>
-          <div class="number-dislikes">14</div>
+          <div class="number-dislikes"><%= video.thumbs_down_total %></div>
+        <% end %>
         </div>
         <div class="col-md-3">
           <img src="http://img.youtube.com/vi/IrJkyFeJ2Fc/mqdefault.jpg" height="125px" width="221px">
