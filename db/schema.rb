@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103162212) do
+ActiveRecord::Schema.define(version: 20151103173741) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"

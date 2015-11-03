@@ -17,13 +17,13 @@
             <img src="<%= "http://img.youtube.com/vi/#{youtube_id[1]}/hqdefault.jpg" %>" height="125px" width="221px"> 
           <% end %>
         </div> 
-          <div class="videoTitle"><%= link_to "#{video.title}", "#hello", class: "fancybox" %></div>
+          <div class="videoTitle"><%= link_to "#{video.title}", "##{video.vidchooser}", class: "fancybox" %></div>
           <%= video.url %>
       </div>  
     </div>  
     <hr>
     <div style="display:none;">
-      <div id="hello">
+      <div id="<%= "#{video.vidchooser}" %>">
       <iframe width="1368" height="770" src="<%= "https://www.youtube.com/embed/#{youtube_id[1]}" %>" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
