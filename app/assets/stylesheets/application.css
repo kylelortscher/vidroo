@@ -84,3 +84,39 @@
 	font-size: 30px;
 	color: #2574A9;
 }
+
+#footer {
+    background-color: #333;
+    width:100%;
+    position:absolute;
+    bottom:0;
+} 
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+.footer-nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+}
+
+.copyright {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+
