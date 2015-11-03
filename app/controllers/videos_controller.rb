@@ -58,9 +58,12 @@ class VideosController < ApplicationController
     if like.valid?
       flash[:success] = "Your selection was successful"
       redirect_to :back
+    elsif like.user_id.nil?
+      flash[:danger] = "You have to log in to vote."
+      redirect_to new_user_session_path
     else
-      flash[:danger] = "You can only like/dislike a recipe once."
-      redirect_to :back
+      flash[:danger] = "You can only like/dislike a recipe one."
+      redirect_to :back  
     end
   end
 
