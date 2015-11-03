@@ -6,11 +6,11 @@
 
 	  <div class="field">
 	    <%= f.label :email %><br />
-	    <%= f.email_field :email, autofocus: true %>
+	    <%= f.email_field :email, autofocus: true, class:"form-control form-group" %>
 	  </div>
 
 	  <div class="actions">
-	    <%= f.submit "Resend unlock instructions" %>
+	    <%= f.submit "Resend unlock instructions", class:"btn-danger btn-lg" %>
 	  </div>
 	<% end %>
 
