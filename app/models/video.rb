@@ -13,4 +13,9 @@ class Video < ActiveRecord::Base
 	def thumbs_down_total
 		self.likes.where(like: false).size
 	end
+
+	def youtube_id(id)
+		youtube = id.split("be\/.")
+		puts youtube[1]
+	end	
 end
