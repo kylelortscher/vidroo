@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103043137) do
+ActiveRecord::Schema.define(version: 20151103162212) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20151103043137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.string   "game"
+    t.string   "videotype"
+    t.string   "vidchooser"
   end
 
 end
