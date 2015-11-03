@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'welcome/privacy'
+
+  get 'welcome/tos'
+
+  get 'welcome/help'
+
   devise_for :users
   resources :videos do
     member do
