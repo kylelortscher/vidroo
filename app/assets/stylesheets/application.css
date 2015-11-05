@@ -123,3 +123,9 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+    font-size: 42px;
+    font-family: 'Passion One', cursive;
+}

@@ -1,5 +1,5 @@
 <!-- Code for navbar -->
-<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -15,8 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <%= form_tag search_videos_path, method: :get, class:"navbar-form navbar-left navBarSearchForm " do %>
-        <%= text_field_tag :search, params[:search], class: "form-control navBarSearchForm " %>
-        <%= submit_tag "search", name: nil, class: "btn btn-default" %>
+        <%= text_field_tag :search, params[:search], class: "form-control navBarSearchForm " , placeholder:"Search by any videos, or game titles" %>
       <% end %>  
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>  
