@@ -14,7 +14,6 @@
 //= require fancybox
 //= require bootstrap
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 $(document).ready(function() {
   $("a.fancybox").fancybox();
