@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+	searchkick
 	before_save { self.vidchooser = [*('A'..'Z')].sample(8).join }
 	before_save { self.game = game.downcase }
 	belongs_to :user

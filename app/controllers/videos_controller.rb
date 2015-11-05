@@ -1,6 +1,14 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
 
+  def search
+    if params[:search].present?
+      @videos = Video.search(params[:search])
+    else
+      @videos = Video.all
+    end
+  end      
+
   # GET /videos
   # GET /videos.json
   def index

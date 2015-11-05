@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#For search function
+gem 'searchkick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'fancybox2-rails', '~> 0.2.8'

@@ -71,6 +71,7 @@
 }
 
 #navBarSearchForm input[type=text]{width:630px !important;}
+.navBarSearchForm input[type=text]{width:630px !important;}
 
 .number-likes {
 	margin-left: 12px;

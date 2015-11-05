@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :videos do
+    collection do
+      get 'search'
+    end  
     member do
       post 'like'
     end
