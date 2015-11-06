@@ -4,6 +4,8 @@ class Video < ActiveRecord::Base
 	before_save { self.game = game.downcase }
 	belongs_to :user
 	has_many :likes
+	has_many :favorite_videos
+	has_many :favorited_by, through: :favorite_videos, source: :user
 	validates :title, presence: true, length: {in: 3..50 }
 	VALID_URL_REGEX = /(youtu\.be\/|yoube\.com\/(watc\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
 	validates :url, presence: true, uniqueness: { case_sensitive: false }, length: {in: 9..50}, format: { with: VALID_URL_REGEX }

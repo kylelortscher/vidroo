@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :videos do
+    put :favorite, on: :member
     collection do
       get 'search'
     end  
