@@ -21,7 +21,8 @@
       <% if user_signed_in? %>  
         <%= link_to new_video_path do %>  
           <button type="button" class="btn btn-danger navbar-btn">Post A Video</button>
-        <% end %>       
+        <% end %>
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       <% else %>
         <%= link_to new_user_registration_path do %>
             <button type="button" class="btn btn-danger navbar-btn">Sign Up</button>

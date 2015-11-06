@@ -15,6 +15,7 @@ class VideosController < ApplicationController
   def index
     @videos = Video.paginate(:page => params[:page], :per_page => 20 )
     @videos = @videos.where(game: params["game"]) if params["game"].present?
+    @videos = @videos.where("created_at < ?", params["date"]) if params["date"].present?
     render layout: 'indexapplication'
   end
 
