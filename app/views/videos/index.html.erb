@@ -19,7 +19,12 @@
         </div> 
           <div class="videoTitle"><%= link_to "#{video.title}", "##{video.vidchooser}", class: "fancybox" %></div>
           <div class="channelName">Created By:<%= video.channel %></div><br>
-          <div class="gameType">Game: <button type="button" class="btn btn-default"><%= video.game %></button></div>
+          <div class="gameType">
+            Game: <button type="button" class="btn btn-default"><%= video.game %></button>
+            <% if user_signed_in? && current_user.admin %>
+              <%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %>
+            <% end %> 
+          </div>
       </div>  
     </div>  
     <hr>
