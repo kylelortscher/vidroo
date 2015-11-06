@@ -16,8 +16,8 @@
     <%= f.text_field :title, class:"form-control form-group" %>
   </div>
   <div class="field">
-    <%= f.label :Youtube_embedded_url %><br>
-    <%= f.text_field :url, class:"form-control form-group" %>
+    <%= f.label :Youtube_embed_url %><br>
+    <%= f.text_field :url, class:"form-control form-group", placeholder: "ex. youtu.be/dQw4w9WgXcQ<" %>
   </div>
   <div class="field">
     <%= f.label :Youtube_channel_name %><br>
@@ -26,6 +26,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="field">
+        <%= f.label :Game_type %>
         <%= f.select(:game, ['Minecraft', 'Grand Theft Auto', 'League of Legends', 'Call Of Duty', 'FIFA', 'Garry\'s Mod', 'The Sims', 'Five Nights at Freddy\'s', 'Puzzles and Dragons', 'DOTA 2', 'Metal Gear Solid', 'Fallout', 'Counterstrike', 'Diablo'], {}, { :class => 'form-control form-group input-sm' }) %>
       </div>
     </div>  
