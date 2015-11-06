@@ -1,7 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   include ActionView::Helpers::TextHelper
-  require 'will_paginate/array'
 
   def search
     if params[:search].present?
@@ -18,7 +17,7 @@ class VideosController < ApplicationController
     @videos = @videos.where(game: params["game"]) if params["game"].present?
     @videos = @videos.where("created_at < ?", params["date"]) if params["date"].present?
     @videos = @videos.sort_by{|likes| likes.thumbs_up_total}.reverse
-    @videos = @videos.paginate(:per_page => 15)
+    @videos = @videos.paginate(:page => params[:page], :per_page => 10)
     render layout: 'indexapplication'
   end
 
