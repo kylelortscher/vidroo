@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106005521) do
+ActiveRecord::Schema.define(version: 20151106010701) do
 
   create_table "likes", force: :cascade do |t|
     t.boolean  "like"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151106005521) do
     t.string   "game"
     t.string   "videotype"
     t.string   "vidchooser"
+    t.string   "channel"
   end
 
 end

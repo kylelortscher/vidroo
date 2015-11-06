@@ -9,6 +9,7 @@ class Video < ActiveRecord::Base
 	validates :url, presence: true, uniqueness: { case_sensitive: false }, length: {in: 9..50}, format: { with: VALID_URL_REGEX }
 	validates :user_id, presence: true
 	validates :game, presence: true
+	validates :channel, presence: true, length: {in: 9..50}
 	default_scope -> { order(updated_at: :desc)}
 
 	def thumbs_up_total
