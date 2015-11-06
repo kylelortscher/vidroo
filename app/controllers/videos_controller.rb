@@ -4,9 +4,10 @@ class VideosController < ApplicationController
 
   def search
     if params[:search].present?
-      @videos = Video.search(params[:search])
+      @videos = Video.all.order("created_at DESC") 
+      @videos = @videos.search(params[:search]) 
     else
-      @videos = Video.sort_by{|likes| likes.thumbs_up_total}.reverse
+      @videos = Video.all
     end
   end      
 
@@ -72,8 +73,8 @@ class VideosController < ApplicationController
       flash[:success] = "Your selection was successful"
       redirect_to :back
     elsif like.user_id.nil?
-      flash[:danger] = "You have to log in to vote."
-      redirect_to new_user_session_path
+      flash[:danger] = "You have to sign up to vote."
+      redirect_to new_user_registration_path
     else
       flash[:danger] = "You can only like/dislike a recipe one."
       redirect_to :back  
