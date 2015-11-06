@@ -4,19 +4,19 @@ class VideosController < ApplicationController
 
   def search
     if params[:search].present?
-      @videos = Video.search(params[:search], page: params[:page], per_page: 20)
+      @videos = Video.search(params[:search])
     else
-      @videos = Video.paginate(:page => params[:page], :per_page => 20 ).sort_by{|likes| likes.thumbs_up_total}.reverse
+      @videos = Video.sort_by{|likes| likes.thumbs_up_total}.reverse
     end
   end      
 
   # GET /videos
   # GET /videos.json
-  require 'will_paginate/array'
   def index
-    @videos = Video.paginate(:page => params[:page], :per_page => 20 ).sort_by{|likes| likes.thumbs_up_total}.reverse
+    @videos = Video.all
     @videos = @videos.where(game: params["game"]) if params["game"].present?
     @videos = @videos.where("created_at < ?", params["date"]) if params["date"].present?
+    @videos = @videos.sort_by{|likes| likes.thumbs_up_total}.reverse
     render layout: 'indexapplication'
   end
 
