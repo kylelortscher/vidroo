@@ -19,7 +19,15 @@
         </div> 
           <div class="videoTitle"><%= link_to "#{video.title}", "##{video.vidchooser}", class: "fancybox" %></div>
           <div class="channelName"><%= video.channel %></div>
-          <button type="button" class="btn btn-danger"><i class="fa fa-heart"></i>&nbsp;Favorite</button>
+          <% if user_signed_in? %> 
+            <%= link_to favorite_video_path(video, type: "favorite"), method: :put, class:"btn btn-danger" do %>
+              <i class="fa fa-heart"></i> Favorite
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path, class:"btn btn-danger" do %>
+              <i class="fa fa-heart"></i> Favorite
+            <% end %>
+          <% end %>    
       </div>  
     </div>  
     <hr>
