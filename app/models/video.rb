@@ -6,7 +6,7 @@ class Video < ActiveRecord::Base
 	has_many :likes
 	has_many :favorite_videos
 	has_many :favorited_by, through: :favorite_videos, source: :user
-	validates :title, presence: true, length: {in: 3..50 }
+	validates :title, presence: true, length: {in: 3..100 }
 	VALID_URL_REGEX = /(youtu\.be\/|yoube\.com\/(watc\?(.*&)?v=|(embed|v)\/))([^\?&"'>]+)/
 	validates :url, presence: true, uniqueness: { case_sensitive: false }, length: {in: 9..50}, format: { with: VALID_URL_REGEX }
 	validates :user_id, presence: true
