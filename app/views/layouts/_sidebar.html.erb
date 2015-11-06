@@ -8,11 +8,11 @@
     	<%= form_tag videos_path, method: :get do %>
     		<div class="filterName">Game Type:</div>
     		<select name="game" id="game" class="form-control form-group">
-    			<option>Choose Your Favorite Game</option>
+    			<option disabled selected>Choose Your Favorite Game</option>
     			<option value="minecraft">Minecraft</option>
     			<option value="call of duty">Call Of Duty</option>
     			<option value="grand theft auto">Grand Theft Auto</option>
-    			<option value="league of legends">League Of LEgends</option>
+    			<option value="league of legends">League Of Legends</option>
     			<option value="fifa">FIFA</option>
     			<option value="garry's mod">Garry's Mod</option>
     			<option value="the sims">The Sime</option>
@@ -24,7 +24,25 @@
     			<option value="counterstrike">CounterStrike</option>
     			<option value="diablo">Diablo</option>
     		</select>
-    		<div class="filterName">Sort By:</div>	    			
+    		<div class="filterName">Posted:</div>
+    		<select name="date" id="date" class="form-control form-group">
+    			<option value="1.day.from_now.beginning_of_day">Today</option>
+    			<option value="3.day.from_now.beginning_of_day">3 Days Ago</option>
+    			<option value="5.day.from_now.beginning_of_day">5 Days Ago</option>
+    			<option value="1.week.from_now.beginning_of_day">1 Week Ago</option>
+    			<option value="2.week.from_now.beginning_of_day">2 Weeks Ago</option>
+    			<option value="1.month.from_now">1 Month Ago</option>
+    			<option value="3.month.from_now">3 Months Ago</option>
+    			<option value="6.month.from_now">6 Months Ago</option>
+    			<option value="12.month.from_now">1 Year Ago</option>
+    			<option value="all">All Time</option>
+    		</select>
+    		<div class="filterName">Sort By:</div>
+    		<select name="date" id="date" class="form-control form-group">
+    			<option value="24.Hours">Most Likes</option>
+    			<option value="24.Hours">Most Recent</option>
+    		</select>    		
+
     		<center><%= submit_tag "Filter", name: nil, class:"btn btn-default" %></center>
     	<% end %>
     </div>	

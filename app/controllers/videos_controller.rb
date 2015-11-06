@@ -3,9 +3,9 @@ class VideosController < ApplicationController
 
   def search
     if params[:search].present?
-      @videos = Video.search(params[:search])
+      @videos = Video.search(params[:search], page: params[:page], per_page: 20)
     else
-      @videos = Video.all
+      @videos = Video.paginate(:page => params[:page], :per_page => 20 )
     end
     render layout: 'indexapplication'
   end      
