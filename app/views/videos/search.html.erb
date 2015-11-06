@@ -18,7 +18,7 @@
           <% end %>
         </div> 
           <div class="videoTitle"><%= link_to "#{video.title}", "##{video.vidchooser}", class: "fancybox" %></div>
-          <%= video.url %>
+          <div class="channelName">Created By:<%= video.channel %>&nbsp;&nbsp;&nbsp;Uploaded By:<%= current_user.username %></div>
       </div>  
     </div>  
     <hr>

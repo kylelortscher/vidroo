@@ -13,7 +13,8 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.paginate(:page => params[:page], :per_page => 25)
+    @videos = Video.paginate(:page => params[:page], :per_page => 20 )
+    @videos = @videos.where(game: params["game"]) if params["game"].present?
     render layout: 'indexapplication'
   end
 

@@ -6,39 +6,27 @@
   <div class="panel-body">
     <div class="filter">
     	<%= form_tag videos_path, method: :get do %>
-    		<div class="filterText">Sort By:</div>
-			<select class="form-control form-group">
-				<option value="mostliked" selected="selected">Most Liked</option>
-				<option value="mostrecent">Most Recent</option>
-			</select>
-			<div class="filterText">Time:</div>
-			<select class="form-control form-group">
-				<option value="24hours" selected="selected">24 Hours</option>
-				<option value="3days">3 Days</option>
-				<option value="5days">5 Days</option>
-				<option value="1Week">1 Week</option>
-				<option value="2Weeks">2 Weeks</option>
-				<option value="1Month">1 Month</option>
-				<option value="3Months">3 Months</option>
-				<option value="6Months">6 Months</option>
-				<option value="1Year">1 Year</option>
-				<option value="alltime">All Time</option>
-			</select>
-			<div class="filterText">Game:</div>
-			<select class="form-control form-group">
-				<option value="allgames" selected="selected">All</option>
-				<option value="3days">3 Days</option>
-				<option value="5days">5 Days</option>
-				<option value="1Week">1 Week</option>
-				<option value="2Weeks">2 Weeks</option>
-				<option value="1Month">1 Month</option>
-				<option value="3Months">3 Months</option>
-				<option value="6Months">6 Months</option>
-				<option value="1Year">1 Year</option>
-				<option value="alltime">All Time</option>				
-			</select>
-    	  <center><%= submit_tag "Filter", name: nil,class:"btn btn-default" %></center>
-    	<% end %>  
+    		<div class="filterName">Game Type:</div>
+    		<select name="game" id="game" class="form-control form-group">
+    			<option>Choose Your Favorite Game</option>
+    			<option value="minecraft">Minecraft</option>
+    			<option value="call of duty">Call Of Duty</option>
+    			<option value="grand theft auto">Grand Theft Auto</option>
+    			<option value="league of legends">League Of LEgends</option>
+    			<option value="fifa">FIFA</option>
+    			<option value="garry's mod">Garry's Mod</option>
+    			<option value="the sims">The Sime</option>
+    			<option value="five nights at freddy\'s">Five Nights at Freedy's</option>
+    			<option value="puzzles and dragons">Puzzles And Dragons</option>
+    			<option value="dota 2">DOTA 2</option>
+    			<option value="metal gear solid">Metal Gear Solid</option>
+    			<option value="fallout">Fallout</option>
+    			<option value="counterstrike">CounterStrike</option>
+    			<option value="diablo">Diablo</option>
+    		</select>
+    		<div class="filterName">Sort By:</div>	    			
+    		<center><%= submit_tag "Filter", name: nil, class:"btn btn-default" %></center>
+    	<% end %>
     </div>	
   </div>
 </div>
