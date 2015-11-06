@@ -87,19 +87,6 @@ class VideosController < ApplicationController
     end
   end
 
-  def favorite
-    type = params[:type]
-    if type == "favorite"
-      current_user.favorites << @video
-      redirect_to :back, notice: "Video was successfully added to favorites"
-    elsif type == "unfavorite"
-      current_user.favorites.delete(@video)
-      redirect_to :back, notice: "Video was successfully removed from favorites"
-    else
-      redirect_to :back, notice: "Nothing happened."
-    end    
-  end  
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_video

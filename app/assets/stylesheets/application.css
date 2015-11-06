@@ -106,7 +106,7 @@
 .footer-nav li a:visited {
     text-decoration: none;
     border: 0;
-    color: #888;
+    color: #ccc;
 }
 
 .copyright {
@@ -117,7 +117,7 @@
 
 .footer-nav li a:hover,
 .footer-nav li a:active {
-    color: #ddd;
+    color: #ccc;
 }
 
 * {
