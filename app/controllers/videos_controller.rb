@@ -5,8 +5,18 @@ class VideosController < ApplicationController
   def search
     if params[:search].present?
       @videos = Video.search(params[:search])
+      @videos = @videos.where(game: params["game"]) if params["game"].present?
+      @videos = @videos.where("created_at < ?", params["date"]) if params["date"].present?
+      @videos = @videos.sort_by{|likes| likes.thumbs_up_total}.reverse
+      @videos = @videos.paginate(:page => params[:page], :per_page => 10)
+      render layout: 'indexapplication'      
     else
       @videos = Video.all
+      @videos = @videos.where(game: params["game"]) if params["game"].present?
+      @videos = @videos.where("created_at < ?", params["date"]) if params["date"].present?
+      @videos = @videos.sort_by{|likes| likes.thumbs_up_total}.reverse
+      @videos = @videos.paginate(:page => params[:page], :per_page => 10)
+      render layout: 'indexapplication'
     end
   end      
 
