@@ -122,6 +122,7 @@
 
 * {
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 .navbar-inverse .navbar-brand {

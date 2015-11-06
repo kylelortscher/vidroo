@@ -22,6 +22,7 @@ gem 'fancybox2-rails', '~> 0.2.8'
 #Devise Authentication Gem
 gem 'devise', '~> 3.5', '>= 3.5.2'
 #Will Paginate
+gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 #Using Bootfalt Flat UI For Bootstrap
 gem 'bootflat-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
