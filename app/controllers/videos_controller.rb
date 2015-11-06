@@ -7,6 +7,7 @@ class VideosController < ApplicationController
     else
       @videos = Video.all
     end
+    render layout: 'indexapplication'
   end      
 
   # GET /videos
