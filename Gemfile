@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #For Heroku Deployment
 gem 'puma'
 
+#Heroku Database
+gem 'pg'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -44,7 +47,6 @@ gem 'puma'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'sqlite3'	
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -56,6 +58,5 @@ group :development, :test do
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
