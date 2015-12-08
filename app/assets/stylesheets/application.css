@@ -70,8 +70,8 @@
     color: #3bafda;
 }
 
-#navBarSearchForm input[type=text]{width:630px !important;}
-.navBarSearchForm input[type=text]{width:630px !important;}
+#navBarSearchForm input[type=text]{width:330px !important;}
+.navBarSearchForm input[type=text]{width:330px !important;}
 
 .number-likes {
 	margin-left: 12px;

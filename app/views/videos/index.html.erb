@@ -2,7 +2,7 @@
   <% youtube_id = video.url.split(/.be\//) %> 
     <div class="videopost">
       <div class="row">
-        <div class="col-md-1">
+        <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
         <%= link_to like_video_path(video, like: true), method: :post do %>
           <button type="button" class="btn btn-primary"><i class="fa fa-thumbs-up"></i></button>
           <div class="number-likes"><%= video.thumbs_up_total %></div>
@@ -12,11 +12,12 @@
           <div class="number-dislikes"><%= video.thumbs_down_total %></div>
         <% end %>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-3 col-sm-9 col-xs-9">
           <%= link_to "##{video.vidchooser}", class: "fancybox" do %>
             <img src="<%= "http://img.youtube.com/vi/#{youtube_id[1]}/mqdefault.jpg" %>" height="125px" width="221px"> 
           <% end %>
-        </div> 
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12"> 
           <div class="videoTitle"><%= link_to "#{video.title}", "##{video.vidchooser}", class: "fancybox" %></div>
           <div class="channelName">Created By:<%= video.channel %></div>
           <div class="submittedAgo">Submited: <%= time_ago_in_words(video.created_at) %> ago</div>
@@ -26,12 +27,13 @@
               <%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-warning" %>
             <% end %> 
           </div>
+        </div>
       </div>  
     </div>  
     <hr>
     <div style="display:none;">
       <div id="<%= "#{video.vidchooser}" %>">
-      <iframe width="1368" height="770" src="<%= "https://www.youtube.com/embed/#{youtube_id[1]}" %>" frameborder="0" allowfullscreen></iframe>
+      <iframe width="1368" height="770" src="<%= "https://www.youtube.com/embed/#{youtube_id[1]}?autoplay=1&cc_load_policy=1" %>" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 <% end %>
